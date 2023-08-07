@@ -25,7 +25,7 @@ RSpec.describe "Get '/api/v1/air_quality?country=nigeria'", :vcr do
       expect(air_quality[:data][:attributes]).to have_key(:aqi)
       expect(air_quality[:data][:attributes][:aqi]).to be_an(Integer)
       expect(air_quality[:data][:attributes]).to have_key(:pm25_concentration)
-      expect(air_quality[:data][:attributes][:pm25_concentration]).to be_a(Float)
+      expect(air_quality[:data][:attributes][:pm25_concentration]).to be_an(Integer)
       expect(air_quality[:data][:attributes]).to have_key(:co_concentration)
       expect(air_quality[:data][:attributes][:co_concentration]).to be_a(Float)
     end
