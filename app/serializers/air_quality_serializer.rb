@@ -1,0 +1,2 @@
+class AirQualitySerializer
+end
