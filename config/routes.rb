@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :recipes, only: [:index]
       resources :learning_resources, only: [:index]
-      post '/users', to: 'users#create'
+      resources :users, only: [:create]
+      resources :sessions, only: [:create]
     end
   end
 end
