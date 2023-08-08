@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "GET /api/v1/learning_resources", :vcr do
   describe "happy path" do
     it "returns a list of learning resources" do
-      get("/api/v1/learning_resources", headers: {"CONTENT_TYPE" => "application/json"}, params: {q: "japan"})
+      get("/api/v1/learning_resources", headers: {"CONTENT_TYPE" => "application/json"}, params: {country: "japan"})
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
@@ -42,7 +42,7 @@ RSpec.describe "GET /api/v1/learning_resources", :vcr do
 
   describe "sad path" do
     it "returns empty arrays for video and images if none are found" do
-      get("/api/v1/learning_resources", headers: {"CONTENT_TYPE" => "application/json"}, params: {q: "asdf"})
+      get("/api/v1/learning_resources", headers: {"CONTENT_TYPE" => "application/json"}, params: {country: "asdf"})
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
